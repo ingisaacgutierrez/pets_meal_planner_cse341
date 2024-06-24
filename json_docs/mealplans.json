@@ -1,0 +1,11 @@
+{
+  "mealPlans": [
+    {
+      "id": "mealPlanId1",
+      "userId": "userId1",
+      "petId": "petId1",
+      "recipes": ["recipeId1", "recipeId2"],
+      "date": "2024-06-20"
+    }
+  ]
+}

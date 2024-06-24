@@ -1,0 +1,13 @@
+{
+  "pets": [
+    {
+      "id": "petId1",
+      "userId": "userId1",
+      "name": "Rex",
+      "species": "Dog",
+      "breed": "Labrador",
+      "age": 5,
+      "mealPlans": ["mealPlanId1", "mealPlanId2"]
+    }
+  ]
+}

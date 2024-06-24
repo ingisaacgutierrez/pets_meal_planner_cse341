@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": "userId1",
+      "username": "johndoe",
+      "email": "john.doe@example.com",
+      "password": "hashedPassword",
+      "pets": ["petId1", "petId2"],
+      "mealPlans": ["mealPlanId1", "mealPlanId2"]
+    }
+  ]
+}
