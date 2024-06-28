@@ -5,10 +5,10 @@
     "description": "Restaurant API",
     "version": "1.0.0"
   },
-  "host": "localhost:3030",
+  "host": "pets-meal-planner-cse341-3wy5.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "tags": [
     {
