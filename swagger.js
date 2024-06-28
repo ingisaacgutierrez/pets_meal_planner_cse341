@@ -7,8 +7,8 @@ const doc = {
   },
   //host: 'render link',
   //schemes: ['https']
-  host: 'localhost:3030',
-  schemes: ['http']
+  host: 'pets-meal-planner-cse341-3wy5.onrender.com',
+  schemes: ['https']
 };
 
 const outputFile = './swagger.json';
