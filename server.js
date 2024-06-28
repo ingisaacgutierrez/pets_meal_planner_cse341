@@ -19,7 +19,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use('/', require('./routes'));
 
-app.use('/', require('./routes/users.js'));
+app.use('/user', require('./routes/users.js'));
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
