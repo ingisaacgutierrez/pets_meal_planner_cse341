@@ -7,7 +7,9 @@
   },
   "host": "pets-meal-planner-cse341-3wy5.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": [
+    "https"
+  ],
   "tags": [
     {
       "name": "User"
