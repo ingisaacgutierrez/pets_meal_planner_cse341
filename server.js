@@ -28,7 +28,3 @@ mongodb.initDb((err, mongodb) => {
     });
   }
 });
-
-// app.listen(port, () => {
-//   console.log(`Running on port ${port}`);
-// });
