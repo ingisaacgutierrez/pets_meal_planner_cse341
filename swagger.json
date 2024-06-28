@@ -37,9 +37,7 @@
     },
     "/all-users": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "",
         "responses": {
           "200": {
@@ -50,9 +48,7 @@
     },
     "/user/{id}": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "",
         "parameters": [
           {
@@ -71,9 +67,7 @@
     },
     "/create/user": {
       "post": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "",
         "responses": {
           "default": {
@@ -84,9 +78,7 @@
     },
     "/update/user/{id}": {
       "put": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "",
         "parameters": [
           {
@@ -105,9 +97,7 @@
     },
     "/delete/user/{id}": {
       "delete": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "",
         "parameters": [
           {
@@ -126,9 +116,7 @@
     },
     "/all-pets": {
       "get": {
-        "tags": [
-          "Pets"
-        ],
+        "tags": ["Pets"],
         "description": "",
         "responses": {
           "default": {
@@ -139,9 +127,7 @@
     },
     "/pet/{id}": {
       "get": {
-        "tags": [
-          "Pets"
-        ],
+        "tags": ["Pets"],
         "description": "",
         "parameters": [
           {
@@ -160,9 +146,7 @@
     },
     "/create/pet": {
       "post": {
-        "tags": [
-          "Pets"
-        ],
+        "tags": ["Pets"],
         "description": "",
         "responses": {
           "default": {
@@ -173,9 +157,7 @@
     },
     "/update/pet/{id}": {
       "put": {
-        "tags": [
-          "Pets"
-        ],
+        "tags": ["Pets"],
         "description": "",
         "parameters": [
           {
@@ -194,9 +176,7 @@
     },
     "/delete/pet/{id}": {
       "delete": {
-        "tags": [
-          "Pets"
-        ],
+        "tags": ["Pets"],
         "description": "",
         "parameters": [
           {
@@ -215,9 +195,7 @@
     },
     "/all-recipes": {
       "get": {
-        "tags": [
-          "Recipes"
-        ],
+        "tags": ["Recipes"],
         "description": "",
         "responses": {
           "default": {
@@ -228,9 +206,7 @@
     },
     "/recipe/{id}": {
       "get": {
-        "tags": [
-          "Recipes"
-        ],
+        "tags": ["Recipes"],
         "description": "",
         "parameters": [
           {
@@ -249,9 +225,7 @@
     },
     "/create/recipe": {
       "post": {
-        "tags": [
-          "Recipes"
-        ],
+        "tags": ["Recipes"],
         "description": "",
         "responses": {
           "default": {
@@ -262,9 +236,7 @@
     },
     "/update/recipe/{id}": {
       "put": {
-        "tags": [
-          "Recipes"
-        ],
+        "tags": ["Recipes"],
         "description": "",
         "parameters": [
           {
@@ -283,9 +255,7 @@
     },
     "/delete/recipe/{id}": {
       "delete": {
-        "tags": [
-          "Recipes"
-        ],
+        "tags": ["Recipes"],
         "description": "",
         "parameters": [
           {
@@ -304,9 +274,7 @@
     },
     "/all-meal-plans": {
       "get": {
-        "tags": [
-          "Meal Plans"
-        ],
+        "tags": ["Meal Plans"],
         "description": "",
         "responses": {
           "default": {
@@ -317,9 +285,7 @@
     },
     "/meal-plan/{id}": {
       "get": {
-        "tags": [
-          "Meal Plans"
-        ],
+        "tags": ["Meal Plans"],
         "description": "",
         "parameters": [
           {
@@ -338,9 +304,7 @@
     },
     "/create/meal-plan": {
       "post": {
-        "tags": [
-          "Meal Plans"
-        ],
+        "tags": ["Meal Plans"],
         "description": "",
         "responses": {
           "default": {
@@ -351,9 +315,7 @@
     },
     "/update/meal-plan/{id}": {
       "put": {
-        "tags": [
-          "Meal Plans"
-        ],
+        "tags": ["Meal Plans"],
         "description": "",
         "parameters": [
           {
@@ -372,9 +334,7 @@
     },
     "/delete/meal-plan/{id}": {
       "delete": {
-        "tags": [
-          "Meal Plans"
-        ],
+        "tags": ["Meal Plans"],
         "description": "",
         "parameters": [
           {
