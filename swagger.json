@@ -275,10 +275,14 @@
     "/meal-plan/all-meal-plans": {
       "get": {
         "tags": ["Meal Plans"],
+        "summary": "Get all meal plans",
         "description": "",
         "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
           "default": {
-            "description": ""
+            "description": "An error occurred"
           }
         }
       }
@@ -286,6 +290,7 @@
     "/meal-plan/meal-plan/{id}": {
       "get": {
         "tags": ["Meal Plans"],
+        "summary": "Get a single meal plan by ID",
         "description": "",
         "parameters": [
           {
@@ -296,8 +301,11 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
           "default": {
-            "description": ""
+            "description": "An error occurred"
           }
         }
       }
@@ -305,10 +313,14 @@
     "/meal-plan/create/meal-plan": {
       "post": {
         "tags": ["Meal Plans"],
+        "summary": "Create a new meal plan",
         "description": "",
         "responses": {
+          "201": {
+            "description": "Meal plan created successfully"
+          },
           "default": {
-            "description": ""
+            "description": "An error occurred"
           }
         }
       }
@@ -316,6 +328,7 @@
     "/meal-plan/update/meal-plan/{id}": {
       "put": {
         "tags": ["Meal Plans"],
+        "summary": "Update an existing meal plan",
         "description": "",
         "parameters": [
           {
@@ -326,8 +339,11 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Meal plan updated successfully"
+          },
           "default": {
-            "description": ""
+            "description": "An error occurred"
           }
         }
       }
@@ -335,6 +351,7 @@
     "/meal-plan/delete/meal-plan/{id}": {
       "delete": {
         "tags": ["Meal Plans"],
+        "summary": "Delete a meal plan by ID",
         "description": "",
         "parameters": [
           {
@@ -345,8 +362,11 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "Meal plan deleted successfully"
+          },
           "default": {
-            "description": ""
+            "description": "An error occurred"
           }
         }
       }
