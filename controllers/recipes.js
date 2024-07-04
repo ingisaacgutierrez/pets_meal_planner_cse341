@@ -13,7 +13,7 @@ const getAllRecipes = async (req, res) => {
 const getSingleRecipe = async (req, res) =>{
   const recipeId = new objectId(req.params.id);
 
-  const result = await mongodb.getDb().db('Pets_Meal_Planner').collection('recipe').find( {__id: recipeId} );
+  const result = await mongodb.getDb().db('Pets_Meal_Planner').collection('recipe').find( {_id: recipeId} );
 
   result.toArray().then((list) => {
     res.setHeader('Content-Type', 'application/json');
@@ -23,10 +23,10 @@ const getSingleRecipe = async (req, res) =>{
 
 const createRecipe = async (req, res) => {
   const recipe = {
-    name: req.body.name,
+    title: req.body.title,
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
-    nutrition: req.body.nutrition
+    nutrition: req.body.nutrition    
   };
   const response = await mongodb.getDb().db('Pets_Meal_Planner').collection('recipe').insertOne(recipe);
   if (response.acknowledged) {
@@ -41,13 +41,13 @@ const updateRecipe = async (req, res) => {
   const recipeId = new objectId(req.params.id);
 
   const recipe = {
-    name: req.body.name,
+    title: req.body.title,
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
     nutrition: req.body.nutrition
   }
 
-  const response = await mongodb.getDb().db('Pets_Meal_Planner').collection('recipe').replaceOne({__id: recipeId}, recipe);
+  const response = await mongodb.getDb().db('Pets_Meal_Planner').collection('recipe').replaceOne({_id: recipeId}, recipe);
   if (response.acknowledged) {
     res.status(202).json(recipe);
   }
@@ -59,7 +59,7 @@ const updateRecipe = async (req, res) => {
 const deleteRecipe = async (req, res) => {
   const recipeId = new objectId(req.params.id);
 
-  const response = await mongodb.getDb().db('Pets_Meal_Planner').collection('recipe').deleteOne({__id: recipeId});
+  const response = await mongodb.getDb().db('Pets_Meal_Planner').collection('recipe').deleteOne({_id: recipeId});
 
   if (response.acknowledged > 0) {
     res.status(205).json("Recipe Succesfully Deleted")

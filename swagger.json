@@ -227,13 +227,38 @@
       "post": {
         "tags": ["Recipes"],
         "description": "",
+        "parameters": [
+          {
+          "name": "body",
+          "in": "body",
+          "schema": {
+              "type": "object",
+              "properties": {
+          "title": { "example": "any"},
+          "ingredients": { "type": "array",
+
+          "items": {"example": "any"} 
+          },
+          "instructions": { "example": "any"},
+           "nutrition": {
+      "type": "object",
+      "properties" : {
+        "calories": { "example": "any"},
+        "protein": { "example": "any"},
+        "fat": { "example": "any"},
+        "carbohydrates": { "example": "any"}   
+    }
+    
+      }}}}
+     
+
+
+      ],
         "responses": {
           "default": {
             "description": ""
           }
-        }
-      }
-    },
+        }}},
     "/recipe/update/recipe/{id}": {
       "put": {
         "tags": ["Recipes"],
@@ -244,8 +269,32 @@
             "in": "path",
             "required": true,
             "type": "string"
-          }
-        ],
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+          "title": { "example": "any"},
+              
+          "ingredients": { "type": "array",
+
+          "items": {"example": "any"} 
+          },
+        
+            
+          "instructions": { "example": "any"},
+           "nutrition": {
+      "type": "object",
+      "properties" : {
+        "calories": { "example": "any"},
+        "protein": { "example": "any"},
+        "fat": { "example": "any"},
+        "carbohydrates": { "example": "any"}   
+    }
+  }
+      }}}],
         "responses": {
           "default": {
             "description": ""
@@ -352,4 +401,4 @@
       }
     }
   }
-}
+  }
