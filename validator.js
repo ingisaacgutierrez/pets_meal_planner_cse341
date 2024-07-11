@@ -54,7 +54,6 @@ const petsValidate = (req, res, next) => {
 const recipeValidate = (req, res, next) => {
   const recipeValidationRules = {
     title: 'required|string',
-    ingredients: 'required|string',
     instructions: 'required|string',
     calories: 'string',
     protein: 'string',
