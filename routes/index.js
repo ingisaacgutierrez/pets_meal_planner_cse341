@@ -8,5 +8,4 @@ router.use('/user', require('./users'));
 router.use('/recipe', require('./recipes'));
 router.use('/pet', require('./pets'));
 
-
 module.exports = router;

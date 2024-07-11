@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAllMealPlans = async (req, res) => {
   try {
-    const result = await mongodb.getDb().db("Pets_Meal_Planner").collection('meal_plan').find();
+    const result = await mongodb.getDb().db('Pets_Meal_Planner').collection('meal_plan').find();
     const lists = await result.toArray();
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -24,7 +24,11 @@ const getSingleMealPlan = [
 
     try {
       const userId = new ObjectId(req.params.id);
-      const result = await mongodb.getDb().db("Pets_Meal_Planner").collection('meal_plan').findOne({ _id: userId });
+      const result = await mongodb
+        .getDb()
+        .db('Pets_Meal_Planner')
+        .collection('meal_plan')
+        .findOne({ _id: userId });
 
       if (result) {
         res.setHeader('Content-Type', 'application/json');
@@ -58,7 +62,11 @@ const createMealPlan = [
     };
 
     try {
-      const response = await mongodb.getDb().db("Pets_Meal_Planner").collection('meal_plan').insertOne(mealPlan);
+      const response = await mongodb
+        .getDb()
+        .db('Pets_Meal_Planner')
+        .collection('meal_plan')
+        .insertOne(mealPlan);
       if (response.acknowledged) {
         res.status(201).json(response);
       } else {
@@ -92,7 +100,11 @@ const updateMealPlan = [
     };
 
     try {
-      const response = await mongodb.getDb().db("Pets_Meal_Planner").collection('meal_plan').replaceOne({ _id: userId }, mealPlan);
+      const response = await mongodb
+        .getDb()
+        .db('Pets_Meal_Planner')
+        .collection('meal_plan')
+        .replaceOne({ _id: userId }, mealPlan);
       if (response.modifiedCount > 0) {
         res.status(204).send();
       } else {
@@ -115,7 +127,11 @@ const deleteMealPlan = [
 
     const userId = new ObjectId(req.params.id);
     try {
-      const response = await mongodb.getDb().db("Pets_Meal_Planner").collection('meal_plan').deleteOne({ _id: userId });
+      const response = await mongodb
+        .getDb()
+        .db('Pets_Meal_Planner')
+        .collection('meal_plan')
+        .deleteOne({ _id: userId });
       if (response.deletedCount > 0) {
         res.status(204).send();
       } else {
@@ -127,4 +143,10 @@ const deleteMealPlan = [
   }
 ];
 
-module.exports = { getAllMealPlans, getSingleMealPlan, createMealPlan, updateMealPlan, deleteMealPlan };
+module.exports = {
+  getAllMealPlans,
+  getSingleMealPlan,
+  createMealPlan,
+  updateMealPlan,
+  deleteMealPlan
+};

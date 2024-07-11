@@ -7,9 +7,7 @@
   },
   "host": "pets-meal-planner-cse341-3wy5.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "tags": [
     {
       "name": "User"
@@ -229,36 +227,38 @@
         "description": "",
         "parameters": [
           {
-          "name": "body",
-          "in": "body",
-          "schema": {
+            "name": "body",
+            "in": "body",
+            "schema": {
               "type": "object",
               "properties": {
-          "title": { "example": "any"},
-          "ingredients": { "type": "array",
+                "title": { "example": "any" },
+                "ingredients": {
+                  "type": "array",
 
-          "items": {"example": "any"} 
-          },
-          "instructions": { "example": "any"},
-           "nutrition": {
-      "type": "object",
-      "properties" : {
-        "calories": { "example": "any"},
-        "protein": { "example": "any"},
-        "fat": { "example": "any"},
-        "carbohydrates": { "example": "any"}   
-    }
-    
-      }}}}
-     
-
-
-      ],
+                  "items": { "example": "any" }
+                },
+                "instructions": { "example": "any" },
+                "nutrition": {
+                  "type": "object",
+                  "properties": {
+                    "calories": { "example": "any" },
+                    "protein": { "example": "any" },
+                    "fat": { "example": "any" },
+                    "carbohydrates": { "example": "any" }
+                  }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "default": {
             "description": ""
           }
-        }}},
+        }
+      }
+    },
     "/recipe/update/recipe/{id}": {
       "put": {
         "tags": ["Recipes"],
@@ -276,25 +276,28 @@
             "schema": {
               "type": "object",
               "properties": {
-          "title": { "example": "any"},
-              
-          "ingredients": { "type": "array",
+                "title": { "example": "any" },
 
-          "items": {"example": "any"} 
-          },
-        
-            
-          "instructions": { "example": "any"},
-           "nutrition": {
-      "type": "object",
-      "properties" : {
-        "calories": { "example": "any"},
-        "protein": { "example": "any"},
-        "fat": { "example": "any"},
-        "carbohydrates": { "example": "any"}   
-    }
-  }
-      }}}],
+                "ingredients": {
+                  "type": "array",
+
+                  "items": { "example": "any" }
+                },
+
+                "instructions": { "example": "any" },
+                "nutrition": {
+                  "type": "object",
+                  "properties": {
+                    "calories": { "example": "any" },
+                    "protein": { "example": "any" },
+                    "fat": { "example": "any" },
+                    "carbohydrates": { "example": "any" }
+                  }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "default": {
             "description": ""
@@ -421,4 +424,4 @@
       }
     }
   }
-  }
+}
