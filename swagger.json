@@ -372,13 +372,12 @@
               "type": "object",
               "properties": {
           "userId": { "example": "any"},
-          "petID": { "example": "any"},
+          "petId": { "example": "any"},
           "recipes": {"type": "array",
             "items": { "example": "any"
-          },
+          }},
           "date":{"example":"year-month-day"}       
-      }}}}],
-     
+      }}}],
         "responses": {
           "201": {
             "description": "Meal plan created successfully"
@@ -402,12 +401,12 @@
               "type": "object",
               "properties": {
           "userId": { "example": "any"},
-          "petID": { "example": "any"},
+          "petId": { "example": "any"},
           "recipes": {"type": "array",
             "items": { "example": "any"
-          },
+          }},
           "date":{"example":"year-month-day"}       
-      }}}}],
+      }}}],
         "responses": {
           "204": {
             "description": "Meal plan updated successfully"
