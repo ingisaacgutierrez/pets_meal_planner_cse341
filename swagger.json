@@ -364,6 +364,20 @@
         "tags": ["Meal Plans"],
         "summary": "Create a new meal plan",
         "description": "",
+        "parameters": [
+          {
+          "name": "body",
+          "in": "body",
+          "schema": {
+              "type": "object",
+              "properties": {
+          "userId": { "example": "any"},
+          "petID": { "example": "any",
+          "recipes": {"type": "array"}
+          },
+          "date": {"example":"year-month-day"}
+       }} }],
+     
         "responses": {
           "201": {
             "description": "Meal plan created successfully"
@@ -381,12 +395,17 @@
         "description": "",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
+          "name": "body",
+          "in": "body",
+          "schema": {
+              "type": "object",
+              "properties": {
+          "userId": { "example": "any"},
+          "petID": { "example": "any",
+          "recipes": {"type": "array"}
+          },
+          "date": {"example":"year-month-day"}
+       }} }],
         "responses": {
           "204": {
             "description": "Meal plan updated successfully"
