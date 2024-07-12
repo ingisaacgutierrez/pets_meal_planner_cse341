@@ -5,10 +5,10 @@ const doc = {
     title: 'My API',
     description: 'Restaurant API'
   },
-  //host: 'render link',
+  host: 'localhost:3030',
+  schemes: ['http']
+  //host: 'pets-meal-planner-cse341-3wy5.onrender.com',
   //schemes: ['https']
-  host: 'pets-meal-planner-cse341-3wy5.onrender.com',
-  schemes: ['https']
 };
 
 const outputFile = './swagger.json';
