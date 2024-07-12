@@ -395,8 +395,10 @@
         "description": "",
         "parameters": [
           {
-          "name": "body",
-          "in": "body",
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
           "schema": {
               "type": "object",
               "properties": {
