@@ -1,28 +1,20 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
-    "description": "Restaurant API",
+    "title": "Pet Meal Plan API",
+    "description": "An API that contains users, their pets and corresponding meal plans.",
     "version": "1.0.0"
   },
   "host": "pets-meal-planner-cse341-3wy5.onrender.com",
   "basePath": "/",
+  "tags": [
+    "Users",
+    "Pets",
+    "Recipes",
+    "Meal Plans"
+  ],
   "schemes": [
     "https"
-  ],
-  "tags": [
-    {
-      "name": "User"
-    },
-    {
-      "name": "Pets"
-    },
-    {
-      "name": "Recipes"
-    },
-    {
-      "name": "Meal Plans"
-    }
   ],
   "paths": {
     "/": {
@@ -37,8 +29,10 @@
     },
     "/user/all-users": {
       "get": {
-        "tags": ["User"],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -46,10 +40,12 @@
         }
       }
     },
-    "/user/user/{id}": {
+    "/user/{id}": {
       "get": {
-        "tags": ["User"],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -59,209 +55,56 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "/user/create/user": {
+    "/user/create": {
       "post": {
-        "tags": ["User"],
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/user/update/user/{id}": {
-      "put": {
-        "tags": ["User"],
         "description": "",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/user/delete/user/{id}": {
-      "delete": {
-        "tags": ["User"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/pet/all-pets": {
-      "get": {
-        "tags": ["Pets"],
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/pet/pet/{id}": {
-      "get": {
-        "tags": ["Pets"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/pet/create/pet": {
-      "post": {
-        "tags": ["Pets"],
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/pet/update/pet/{id}": {
-      "put": {
-        "tags": ["Pets"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/pet/delete/pet/{id}": {
-      "delete": {
-        "tags": ["Pets"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/recipe/all-recipes": {
-      "get": {
-        "tags": ["Recipes"],
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/recipe/recipe/{id}": {
-      "get": {
-        "tags": ["Recipes"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/recipe/create/recipe": {
-      "post": {
-        "tags": ["Recipes"],
-        "description": "",
-        "parameters": [
-          {
-          "name": "body",
-          "in": "body",
-          "schema": {
+            "name": "body",
+            "in": "body",
+            "schema": {
               "type": "object",
               "properties": {
-          "title": { "example": "any"},
-          "ingredients": { "type": "array",
-
-          "items": {"example": "any"} 
-          },
-          "instructions": { "example": "any"},
-           "nutrition": {
-      "type": "object",
-      "properties" : {
-        "calories": { "example": "any"},
-        "protein": { "example": "any"},
-        "fat": { "example": "any"},
-        "carbohydrates": { "example": "any"}   
-    }
-    
-      }}}}
-     
-
-
-      ],
-        "responses": {
-          "default": {
-            "description": ""
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
           }
-        }}},
-    "/recipe/update/recipe/{id}": {
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/update/{id}": {
       "put": {
-        "tags": ["Recipes"],
         "description": "",
         "parameters": [
           {
@@ -276,70 +119,34 @@
             "schema": {
               "type": "object",
               "properties": {
-          "title": { "example": "any"},
-              
-          "ingredients": { "type": "array",
-
-          "items": {"example": "any"} 
-          },
-        
-            
-          "instructions": { "example": "any"},
-           "nutrition": {
-      "type": "object",
-      "properties" : {
-        "calories": { "example": "any"},
-        "protein": { "example": "any"},
-        "fat": { "example": "any"},
-        "carbohydrates": { "example": "any"}   
-    }
-  }
-      }}}],
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "/recipe/delete/recipe/{id}": {
+    "/user/delete/{id}": {
       "delete": {
-        "tags": ["Recipes"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/meal-plan/all-meal-plans": {
-      "get": {
-        "tags": ["Meal Plans"],
-        "summary": "Get all meal plans",
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "Successful operation"
-          },
-          "default": {
-            "description": "An error occurred"
-          }
-        }
-      }
-    },
-    "/meal-plan/meal-plan/{id}": {
-      "get": {
-        "tags": ["Meal Plans"],
-        "summary": "Get a single meal plan by ID",
         "description": "",
         "parameters": [
           {
@@ -351,47 +158,86 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful operation"
+            "description": "OK"
           },
-          "default": {
-            "description": "An error occurred"
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "/meal-plan/create/meal-plan": {
-      "post": {
-        "tags": ["Meal Plans"],
-        "summary": "Create a new meal plan",
+    "/recipe/all-recipes": {
+      "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/recipe/recipe/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
-          "name": "body",
-          "in": "body",
-          "schema": {
-              "type": "object",
-              "properties": {
-          "userId": { "example": "any"},
-          "petId": { "example": "any"},
-          "recipes": {"type": "array",
-            "items": { "example": "any"
-          }},
-          "date":{"example":"year-month-day"}       
-      }}}],
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "201": {
-            "description": "Meal plan created successfully"
-          },
-          "default": {
-            "description": "An error occurred"
+            "description": "Created"
           }
         }
       }
     },
-    "/meal-plan/update/meal-plan/{id}": {
+    "/recipe/create/recipe": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "ingredients": {
+                  "example": "any"
+                },
+                "instructions": {
+                  "example": "any"
+                },
+                "nutrition": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/recipe/update/recipe/{id}": {
       "put": {
-        "tags": ["Meal Plans"],
-        "summary": "Update an existing meal plan",
         "description": "",
         "parameters": [
           {
@@ -403,30 +249,321 @@
           {
             "name": "body",
             "in": "body",
-          "schema": {
+            "schema": {
               "type": "object",
               "properties": {
-          "userId": { "example": "any"},
-          "petId": { "example": "any"},
-          "recipes": {"type": "array",
-            "items": { "example": "any"
-          }},
-          "date":{"example":"year-month-day"}       
-      }}}],
+                "title": {
+                  "example": "any"
+                },
+                "ingredients": {
+                  "example": "any"
+                },
+                "instructions": {
+                  "example": "any"
+                },
+                "nutrition": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/recipe/delete/recipe/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "205": {
+            "description": "Reset Content"
+          },
+          "405": {
+            "description": "Method Not Allowed"
+          }
+        }
+      }
+    },
+    "/pet/all-pets": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pet/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pet/create": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "species": {
+                  "example": "any"
+                },
+                "breed": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/pet/update/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "species": {
+                  "example": "any"
+                },
+                "breed": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "204": {
-            "description": "Meal plan updated successfully"
+            "description": "No Content"
           },
-          "default": {
-            "description": "An error occurred"
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/pet/delete/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/meal-plan/all-meal-plans": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/meal-plan/meal-plan/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/meal-plan/create/meal-plan": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "petId": {
+                  "example": "any"
+                },
+                "recipes": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/meal-plan/update/meal-plan/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "petId": {
+                  "example": "any"
+                },
+                "recipes": {
+                  "example": "any"
+                },
+                "date": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/meal-plan/delete/meal-plan/{id}": {
       "delete": {
-        "tags": ["Meal Plans"],
-        "summary": "Delete a meal plan by ID",
         "description": "",
         "parameters": [
           {
@@ -438,13 +575,46 @@
         ],
         "responses": {
           "204": {
-            "description": "Meal plan deleted successfully"
+            "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/auth/google": {
+      "get": {
+        "description": "",
+        "responses": {
           "default": {
-            "description": "An error occurred"
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/google/callback": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
     }
   }
-  }
+}
