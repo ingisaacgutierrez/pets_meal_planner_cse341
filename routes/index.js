@@ -8,7 +8,6 @@ router.use('/user', require('./users'));
 router.use('/recipe', require('./recipes'));
 router.use('/pet', require('./pets'));
 router.use('/meal-plan', require('./meal-plans'));
-
-
+router.use('/auth', require('./auth'));
 
 module.exports = router;

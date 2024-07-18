@@ -2,23 +2,18 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'My API',
-    description: 'Restaurant API'
+    title: 'Pet Meal Plan API',
+    description: 'An API that contains users, their pets and corresponding meal plans.'
   },
-  //host: 'localhost:3030',
-  //schemes: ['http']
+  //host: 'render link',
+  //schemes: ['https']
   host: 'pets-meal-planner-cse341-3wy5.onrender.com',
-  schemes: ['https']
+  schemes: ['https'],
+  tags: ['Users', 'Pets', 'Recipes', 'Meal Plans']
 };
 
 const outputFile = './swagger.json';
-const endpointsFiles = [ './routes/index.js', './routes/users.js',
-   './routes/pets.js', './routes/recipes.js', './routes/meal-plans.js'];
+const routes = ['./routes/index.js'];
 
 // generate swagger.json
-swaggerAutogen(outputFile, endpointsFiles, doc);
-
-// Run server after it gets generated
-swaggerAutogen(outputFile, endpointsFiles, doc).then(async () => {
-  await import('./routes/index.js');
-});
+swaggerAutogen(outputFile, routes, doc);

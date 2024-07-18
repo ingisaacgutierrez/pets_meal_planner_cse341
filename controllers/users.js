@@ -28,21 +28,6 @@ const getUserById = async (req, res) => {
   }
 };
 
-const createUser = async (req, res) => {
-  const user = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    password: req.body.password
-  };
-  const response = await mongodb.getDb().db('Pets_Meal_Planner').collection('user').insertOne(user);
-  if (response.acknowledged) {
-    res.status(201).json(response);
-  } else {
-    res.status(500).json(response.error || 'An error occured while creating the user');
-  }
-};
-
 const updateUser = async (req, res) => {
   const userId = new ObjectId(req.params.id);
 
@@ -79,4 +64,4 @@ const deleteUser = async (req, res) => {
   }
 };
 
-module.exports = { getAllUsers, getUserById, createUser, updateUser, deleteUser };
+module.exports = { getAllUsers, getUserById, updateUser, deleteUser };
