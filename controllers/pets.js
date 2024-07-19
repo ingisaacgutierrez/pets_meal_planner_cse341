@@ -27,8 +27,8 @@ const createPet = async (req, res) => {
     name: req.body.name,
     species: req.body.species,
     breed: req.body.breed,
-    age: req.body.age
-    // owner: userId
+    age: req.body.age,
+    owner: req.body.userId
   };
   const response = await mongodb.getDb().db('Pets_Meal_Planner').collection('pet').insertOne(pet);
   if (response.acknowledged) {
