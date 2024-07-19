@@ -156,28 +156,29 @@
             "schema": {
               "type": "object",
               "properties": {
-                "title": {
-                  "example": "any"
-                },
+                "title": { "example": "any" },
                 "ingredients": {
-                  "example": "any"
+                  "type": "array",
+
+                  "items": { "example": "any" }
                 },
-                "instructions": {
-                  "example": "any"
-                },
+                "instructions": { "example": "any" },
                 "nutrition": {
-                  "example": "any"
+                  "type": "object",
+                  "properties": {
+                    "calories": { "example": "any" },
+                    "protein": { "example": "any" },
+                    "fat": { "example": "any" },
+                    "carbohydrates": { "example": "any" }
+                  }
                 }
               }
             }
           }
         ],
         "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "default": {
+            "description": ""
           }
         }
       }
@@ -199,28 +200,31 @@
             "schema": {
               "type": "object",
               "properties": {
-                "title": {
-                  "example": "any"
-                },
+                "title": { "example": "any" },
+
                 "ingredients": {
-                  "example": "any"
+                  "type": "array",
+
+                  "items": { "example": "any" }
                 },
-                "instructions": {
-                  "example": "any"
-                },
+
+                "instructions": { "example": "any" },
                 "nutrition": {
-                  "example": "any"
+                  "type": "object",
+                  "properties": {
+                    "calories": { "example": "any" },
+                    "protein": { "example": "any" },
+                    "fat": { "example": "any" },
+                    "carbohydrates": { "example": "any" }
+                  }
                 }
               }
             }
           }
         ],
         "responses": {
-          "202": {
-            "description": "Accepted"
-          },
-          "402": {
-            "description": "Payment Required"
+          "default": {
+            "description": ""
           }
         }
       }
