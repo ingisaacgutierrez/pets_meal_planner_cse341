@@ -7,32 +7,14 @@
   },
   "host": "pets-meal-planner-cse341-3wy5.onrender.com",
   "basePath": "/",
-  "tags": [
-    "Users",
-    "Pets",
-    "Recipes",
-    "Meal Plans"
-  ],
-  "schemes": [
-    "https"
-  ],
+  "tags": ["Users", "Pets", "Recipes", "Meal Plans"],
+  "schemes": ["https"],
   "paths": {
-    "/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/user/all-users": {
       "get": {
+        "tags": ["User"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -42,10 +24,9 @@
     },
     "/user/{id}": {
       "get": {
+        "tags": ["User"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -67,44 +48,9 @@
         }
       }
     },
-    "/user/create": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "firstName": {
-                  "example": "any"
-                },
-                "lastName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
     "/user/update/{id}": {
       "put": {
+        "tags": ["User"],
         "description": "",
         "parameters": [
           {
@@ -147,6 +93,7 @@
     },
     "/user/delete/{id}": {
       "delete": {
+        "tags": ["User"],
         "description": "",
         "parameters": [
           {
@@ -168,10 +115,9 @@
     },
     "/recipe/all-recipes": {
       "get": {
+        "tags": ["Recipes"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -181,10 +127,9 @@
     },
     "/recipe/recipe/{id}": {
       "get": {
+        "tags": ["Recipes"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -202,6 +147,7 @@
     },
     "/recipe/create/recipe": {
       "post": {
+        "tags": ["Recipes"],
         "description": "",
         "parameters": [
           {
@@ -238,6 +184,7 @@
     },
     "/recipe/update/recipe/{id}": {
       "put": {
+        "tags": ["Recipes"],
         "description": "",
         "parameters": [
           {
@@ -280,6 +227,7 @@
     },
     "/recipe/delete/recipe/{id}": {
       "delete": {
+        "tags": ["Recipes"],
         "description": "",
         "parameters": [
           {
@@ -301,10 +249,9 @@
     },
     "/pet/all-pets": {
       "get": {
+        "tags": ["Pets"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -314,10 +261,9 @@
     },
     "/pet/{id}": {
       "get": {
+        "tags": ["Pets"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -335,6 +281,7 @@
     },
     "/pet/create": {
       "post": {
+        "tags": ["Pets"],
         "description": "",
         "parameters": [
           {
@@ -371,6 +318,7 @@
     },
     "/pet/update/{id}": {
       "put": {
+        "tags": ["Pets"],
         "description": "",
         "parameters": [
           {
@@ -413,6 +361,7 @@
     },
     "/pet/delete/{id}": {
       "delete": {
+        "tags": ["Pets"],
         "description": "",
         "parameters": [
           {
@@ -434,10 +383,9 @@
     },
     "/meal-plan/all-meal-plans": {
       "get": {
+        "tags": ["Meals"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -450,10 +398,9 @@
     },
     "/meal-plan/meal-plan/{id}": {
       "get": {
+        "tags": ["Meals"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -480,6 +427,7 @@
     },
     "/meal-plan/create/meal-plan": {
       "post": {
+        "tags": ["Meals"],
         "description": "",
         "parameters": [
           {
@@ -519,6 +467,7 @@
     },
     "/meal-plan/update/meal-plan/{id}": {
       "put": {
+        "tags": ["Meals"],
         "description": "",
         "parameters": [
           {
@@ -564,6 +513,7 @@
     },
     "/meal-plan/delete/meal-plan/{id}": {
       "delete": {
+        "tags": ["Meals"],
         "description": "",
         "parameters": [
           {
@@ -582,36 +532,6 @@
           },
           "500": {
             "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/auth/google": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/auth/google/callback": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/auth/logout": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
           }
         }
       }
