@@ -11,7 +11,7 @@ const mealPlanValidate = (req, res, next) => {
   const mealPlanValidationRules = {
     userId: 'string',
     petId: 'string',
-    recipes: 'string',
+    recipes: 'array',
     date: 'string'
   };
   validator(req.body, mealPlanValidationRules, {}, (err, status) => {
